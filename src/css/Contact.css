@@ -1,0 +1,40 @@
+ul.info_contact {
+    display: flex;
+}
+.info_contact li {
+    display: flex;
+    margin: 10px 55px;
+}
+.info_contact li i {
+    font-size: 40px;
+    margin: 5px 10px;
+}
+.contact {
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+.contact .row {
+    margin-top: 20px;
+}
+
+.contact textarea {
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid #0000004a;
+    border-radius: 5px;
+    height: 100px;
+    padding: 5px;
+}
+.contact button.btn.btn-info {
+    width: 40%;
+    height: 40px;
+    margin-left: 30%;
+    margin-top: 4px;
+}
+img.map {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

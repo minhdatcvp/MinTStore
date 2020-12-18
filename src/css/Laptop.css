@@ -1,0 +1,84 @@
+.product {
+    border: 1px solid #00000021;
+    margin: 20px 20px;
+    border-radius: 7px;
+    background-color: #fbfbfb5e;
+    text-align: center;
+    cursor: pointer;
+}
+.laptop_content .row{
+    margin-top: 10px;
+}
+p.routerHome {
+    text-transform: uppercase;
+    margin: 15px 15px;
+    font-size: 24px;
+    font-weight: 500;
+}
+p.routerHome a {
+    color: #585858c4;
+    font-weight: 300;
+    font-size: 20px;
+}
+.routerHome a:hover{
+    text-decoration: none;
+    color: black;
+}
+h2.title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+.selection {
+    float: right;
+}
+select#cars {
+    padding: 5px 5px;
+    margin-right: 10px;
+    border: 1px solid #00000045;
+    border-radius: 3px;
+    box-shadow: inset 0 -1.4em 1em 0 rgb(0 0 0 / 5%);
+}
+option {
+    background-color: #efefef;
+}
+.product h4{
+    display: -webkit-box;
+    height: 66px;
+    font-size: 16px;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    padding-top: 5px;
+    text-align: left;
+}
+.product p{
+    color: #171717;
+    font-size: 16px;
+    white-space: nowrap;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.product button.btn.btn-info {
+    font-size: 14px;
+    width: 40%;
+    height: 35px;
+    margin-top: -20px;
+    margin-left: -15px;
+}
+
+.product button.btn.btn-danger {
+    font-size: 14px;
+    width: 50%;
+    height: 35px;
+    margin-top: -20px;
+    margin-left: 5px;
+}
+.product:hover{
+    transform: scale(1.1);
+}

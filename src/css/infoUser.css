@@ -1,0 +1,70 @@
+.col-4.info-detail {
+    text-align: center;
+    margin-bottom: 50px;
+    border-right: 1px solid black;
+}
+
+.info-detail img {
+    width: 75%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px 0px #b5b2b2;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button.btn-info.nuttimkiem {
+    width: 15%;
+    border-radius: 5px;
+    height: 40px;
+    margin: 8px 1px;
+}
+.table .btn {
+    margin-right: -50px;
+    cursor: pointer;
+}
+img.image_in_list {
+    width: 20%;
+}
+td.name_product {
+    width: 50%;
+    text-overflow: ellipsis;
+}
+td.img_product {width: 10%;}
+
+.img_product img {
+    width: 100%;
+}
+td.img_product {
+    width: 8%;
+}
+
+.img_product img {
+    width: 100%;
+}
+th.soluong {
+    width: 13%;
+    text-align: center;
+}
+.name_product p {
+    width: 95%;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+td.stt_product {
+    width: 10%;
+}
+.info-user-detail {
+    margin-top: 25px;
+}
+.info-user-detail h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+td.btn_product {
+    padding-right: 50px;
+}
