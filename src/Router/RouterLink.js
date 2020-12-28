@@ -1,3 +1,4 @@
+import BlogChild_Detail from 'components/Blogs/BlogChild_Detail';
 import InfoUserDetail from 'components/InfoUserDetail/InfoUserDetail';
 import React, { Component } from 'react';
 import {
@@ -45,6 +46,9 @@ class RouterLink extends Component {
                     </Route>
                     <Route path="/InfoUserDetail">
                         <InfoUserDetail/>
+                    </Route>
+                    <Route path="/BlogChild_Detail">
+                        <BlogChild_Detail/>
                     </Route>
                 </Switch>
             </div>

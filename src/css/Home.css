@@ -21,8 +21,8 @@ body {
     font-size: 25px;
     color: #4ed5e8;
     position: fixed;
-    top: 30px;
-    left: 10px;
+    top: 20px;
+    right: 10px;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
@@ -653,12 +653,21 @@ footer {
 .blog_smartphone:hover{
     box-shadow: 5px 5px 5px 0px #464444;
 }
-
+a .blog_smartphone {
+    color: black;
+}
 .blog_smartphone img {
-    width: 30%;
-    margin-top: 25px;
+    width: 25%;
+    margin-top: 20px;
     height: 130px;
     border-radius: 10px;
+}
+.blog_smartphone h5 {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 .blog_text {
     margin: 13px 10px;
@@ -731,7 +740,6 @@ footer {
     color: rgb(24, 66, 163);
 }
 /**********user****************/
-
 .icon-shopping {
     width: 25px;
     height: 25px;
@@ -771,7 +779,8 @@ footer {
     background: #dc3545;
     padding: 5px 5px;
     right: 10px;
-    top: 47%;
+    top: 33%;
+    z-index: 11;
   }
   .nav-item .icon-shopping-bottom:hover{
     background-color: black;
@@ -875,6 +884,5 @@ footer {
 }
 .thongtin {
     display: flex;
-    margin-top: 15px;
     margin-left: 10px;
 }

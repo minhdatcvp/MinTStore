@@ -53,6 +53,10 @@ class ListProduct extends Component {
         this.props.alertOn("warning" , "Đã xóa đơn hàng :((");
         this.props.resetPage();
     }
+    twoAction (){
+        this.props.getDataProduct(this.props.detail);
+        window.scrollTo(0,0);
+    }
     render() {
         return (
             <tr>
@@ -61,7 +65,7 @@ class ListProduct extends Component {
                 <td className="name_product"><p>{this.props.name_product}</p></td>
                 <td className="btn_product">
                     <div className="btn btn-primary" >
-                        <Link to="/ProductDetail" onClick={() => this.props.getDataProduct(this.props.detail)}><i className="fa fa-edit"> Xem</i></Link>
+                        <Link to="/ProductDetail" onClick={() => this.twoAction()}><i className="fa fa-edit"> Xem</i></Link>
                     </div>
                 </td>
                 <td className="btn_product">

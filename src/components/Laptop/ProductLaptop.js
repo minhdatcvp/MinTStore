@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from "react-router-dom";
 import { connect } from 'react-redux';
 import { noteData } from './../../containers/Data/firebaseConnect'
 var infoUser = [];
 class ProductLaptop extends Component {
-    componentWillMount() {
-        // this.props.datauser.product 
-
-    }
     state = {
         key: "",
         name: "",
@@ -84,7 +78,7 @@ class ProductLaptop extends Component {
 
         return (
             <div className="col product">
-                <img src={this.props.image_laptop} alt="abc" />
+                <img className="image_product" src={this.props.image_laptop} alt="abc" />
                 <h4>{this.props.name_laptop}</h4>
                 <p>{this.props.price_laptop}</p>
                 <button type="button" className="btn btn-info" onClick={() => this.inra()}>Mua ngay</button>

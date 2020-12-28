@@ -12,13 +12,10 @@ import Background_laptop_sale from './../../Image/sale_laptop.jpg';
 import Background_smartphone_sale from './../../Image/sale_smartphone.jpg';
 import Background_watch_sale from './../../Image/sale_watch.jpg';
 
-import Image_Blog1 from './../../Image/blog_smartphone.jpg';
-import Image_Blog2 from './../../Image/blog_watch.jpg';
-
 import ProductsSale from './../Home/ProductsSale';
-import BlogsHome from './../Home/BlogsHome';
 
 import ProductLaptop from './../Laptop/ProductLaptop';
+import BlogChild from '../Blogs/BlogChild';
 import {
     BrowserRouter as Router,
     Switch,
@@ -27,6 +24,8 @@ import {
     NavLink
 } from "react-router-dom";
 import {dataLaptop} from 'containers/Data/dulieuLaptop.js';
+import { dataBlogs } from 'containers/Data/dulieuBlogs';
+import Register from 'components/Register';
 class Home extends Component {
     state = {
         pointScroll: 0
@@ -38,10 +37,29 @@ class Home extends Component {
             )
         }
     })
+    homeSmartPhone = () => dataLaptop.map((value, key) => {
+        if (value.class === "home_sm") {
+            return (
+                <ProductLaptop detail = {value} key={key} image_laptop={value.image} name_laptop={value.name} price_laptop={value.price} />
+            )
+        }
+    })
+    homeWatch = () => dataLaptop.map((value, key) => {
+        if (value.class === "home_wt") {
+            return (
+                <ProductLaptop detail = {value} key={key} image_laptop={value.image} name_laptop={value.name} price_laptop={value.price} />
+            )
+        }
+    })
     resetLink = () => {
         window.scrollTo(0, 0);
         
     }
+    renderBlog = () => dataBlogs.map((value, key) => {
+        return (
+            <BlogChild blogDetail={value} key={key} title_blog={value.title} content_blog={value.content_title} image_blog={value.image_title} />
+        )
+    })
     render() {
         return (
             <div>
@@ -124,12 +142,7 @@ class Home extends Component {
                                 <NavLink to="/Watch" onClick={() => this.resetLink()}><ProductsSale image_sale={Background_watch_sale} title_sale = "Watch"/></NavLink>
                                 <h2>News</h2>
                                 <hr />
-                                <BlogsHome title_Blog_Home="Apple ra mắt iPhone 12 mới cùng 3 phiên bản: mini, Pro và ..."
-                                    content_Blog_Home="Apple thông báo tổ chức sự kiện “Hi, Speed” vào 0h ngày 14/10 (giờ Việt Nam). Dòng iPhone mới, bao gồm iPhone 12 mini, iPhone 12, iPhone ..."
-                                    image_Blog={Image_Blog1} />
-                                <BlogsHome title_Blog_Home="Xếp hàng mua Apple Watch Series 6 chính hãng tại Việt Nam"
-                                    content_Blog_Home="Đặc biệt, một số tín đồ táo khuyết đã đến cửa hàng từ lúc 1 giờ sáng. ... Apple Watch Series 6 hoặc SE thứ hai, tức 100 suất tại mỗi cửa hàng."
-                                    image_Blog={Image_Blog2} />
+                                {this.renderBlog()}
                             </div>
                             <div className="col-8 product_content">
                                 {/* gồm các phần : new - sản phẩm bán chạy - sản phẩm giảm giá - ...  */}
@@ -144,25 +157,19 @@ class Home extends Component {
                                 <div className="new_smartphone">
                                     <h4>SmartPhone</h4>
                                     <div className="row">
-                                        {this.homeLaptop()}
+                                        {this.homeSmartPhone()}
                                     </div>
                                 </div>
                                 <div className="new_watch">
                                     <h4>Watch</h4>
                                     <div className="row">
-                                        {this.homeLaptop()}
+                                        {this.homeWatch()}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <hr />
-                        <div className="register">
-                            <h3>ĐĂNG KÝ NHẬN THÔNG TIN</h3>
-                            <form className="form-inline my-2 my-lg-0 ">
-                                <input className="form-control mr-sm-2" type="text" placeholder="Đăng ký" />
-                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Đăng ký</button>
-                            </form>
-                        </div>
+                        <Register/>
                     </div>
                 </div>
 
@@ -172,3 +179,4 @@ class Home extends Component {
 }
 
 export default Home;
+

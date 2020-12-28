@@ -12,7 +12,10 @@ const productInitialState = {
 
     alertStatus: false,
     alertType: "",
-    alertContent: ""
+    alertContent: "",
+
+    blogsDetail: {}
+
 }
 
 const allReducer = (state = productInitialState, action) => {
@@ -33,7 +36,7 @@ const allReducer = (state = productInitialState, action) => {
         case "GET_NUMBER_PRODUCT":
             return { ...state, numberProduct: action.numberProduct }
         case "ALERT_ON":
-            return { ...state, alertStatus: true , alertType : action.alertType, alertContent:action.alertContent}
+            return { ...state, alertStatus: true, alertType: action.alertType, alertContent: action.alertContent }
         case "ALERT_OFF":
             return { ...state, alertStatus: false }
         case "GET_OBJECT":
@@ -41,6 +44,8 @@ const allReducer = (state = productInitialState, action) => {
                 product: action.getObject.product
             })
             return state
+        case "GET_DATA_BLOG":
+            return { ...state, blogsDetail: action.getBlog }
         default:
             return state
     }

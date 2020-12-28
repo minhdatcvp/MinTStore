@@ -11,7 +11,7 @@ class Account extends Component {
         email: '',
         password: ''
     }
-    componentDidMount(){
+    componentDidMount() {
         noteData.on('value', (dataUser) => {
             dataUser.forEach(element => {
                 var key = element.key;
@@ -20,14 +20,14 @@ class Account extends Component {
                 var image = element.val().image;
                 var password = element.val().password;
                 var product = element.val().product;
-               infoUser.push({
-                   key : key,
-                   name : name,
-                   email: email,
-                   password : password,
-                   image : image,
-                   product : product
-               })
+                infoUser.push({
+                    key: key,
+                    name: name,
+                    email: email,
+                    password: password,
+                    image: image,
+                    product: product
+                })
             })
         })
     }
@@ -41,8 +41,6 @@ class Account extends Component {
         this.setState({
             [title]: content
         })
-
-        
     }
     validationForm() {
         let returnData = {
@@ -77,7 +75,7 @@ class Account extends Component {
             }
         }
         infoUser.forEach(element => {
-            if(element.email === this.state.email){
+            if (element.email === this.state.email) {
                 returnData = {
                     error: true,
                     msg: 'Email đã tồn tại vui lòng kiểm tra lại'
@@ -91,17 +89,17 @@ class Account extends Component {
         const validation = this.validationForm()
 
         if (validation.error) {
-            this.props.alertOn("danger" , validation.msg);
+            this.props.alertOn("danger", validation.msg);
         } else {
             /******************************** */
             var user = {};
             user.name = this.state.fname + " " + this.state.lname;
             user.email = this.state.email;
             user.password = this.state.password;
-            user.image = "";
+            user.image = "https://pm1.narvii.com/6729/8e14db5ae41d4d424f5f4212dbeebd37268ae10fv2_00.jpg";
             user.product = " ";
             this.props.addUser(user);
-            this.props.alertOn("info" , 'Submit form success');
+            this.props.alertOn("info", 'Submit form success');
             this.props.getStatusAcc("sign_in")
 
         }
@@ -114,16 +112,16 @@ class Account extends Component {
             [ten]: giatri
         })
     }
-    checkAcc (){
+    checkAcc() {
         let returnData = {
             result: false,
             item: {},
         }
         infoUser.forEach(element => {
-            if(element.email === this.state.email && element.password === this.state.password){
+            if (element.email === this.state.email && element.password === this.state.password) {
                 returnData = {
                     result: true,
-                    item : element
+                    item: element
                 }
             }
         })
@@ -133,10 +131,10 @@ class Account extends Component {
         e.preventDefault();
         const checkAcc = this.checkAcc();
         if (!checkAcc.result) {
-            this.props.alertOn("danger" , "Email hoặc mật khẩu không chính xác vui lòng nhập lại");
+            this.props.alertOn("danger", "Email hoặc mật khẩu không chính xác vui lòng nhập lại");
         }
         if (checkAcc.result) {
-            this.props.alertOn("info" , 'Đăng nhập thành công');
+            this.props.alertOn("info", 'Đăng nhập thành công');
             this.props.getDataUser(checkAcc.item);
             this.editstatusLogin();
             this.props.editsstLoginUser();
@@ -154,7 +152,6 @@ class Account extends Component {
                             <label htmlFor="psw"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" onChange={(event) => this.isChangeSignIn(event)} name="password" required />
                             <button type="submit" onClick={(e) => this.loginOK(e)}>Login</button>
-                            <button type="submit">Login with Facebook</button>
                             <label>
                                 <input type="checkbox" defaultChecked="checked" name="remember" /> Remember me
                             </label>
@@ -253,7 +250,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
                 type: "ALERT_OFF",
             })
         },
-        alertOn: (alertType , alertContent) => {
+        alertOn: (alertType, alertContent) => {
             dispatch({
                 type: "ALERT_ON",
                 alertType,

@@ -1,6 +1,6 @@
 .product_image img {
     width: 90%;
-    margin: 15% 5%;
+    margin: 5% 5%;
 }
 p.routerHome {
     font-size: 20px;
@@ -19,4 +19,7 @@ p.price {
 .info_product ul li {list-style: disc;}
 .evaluate {
     margin-top: 35px;
+}
+h3.product_name {
+    margin-top: 5%;
 }

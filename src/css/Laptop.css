@@ -71,7 +71,11 @@ option {
     margin-top: -20px;
     margin-left: -15px;
 }
-
+img.image_product {
+    margin: 5px;
+    height: 200px;
+    width: 170px;
+}
 .product button.btn.btn-danger {
     font-size: 14px;
     width: 50%;

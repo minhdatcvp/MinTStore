@@ -2,14 +2,13 @@ import logo from './../Image/logo.png';
 import React, { Component } from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link,
     NavLink
 } from "react-router-dom";
 import { dataLaptop } from 'containers/Data/dulieuLaptop.js';
 import { connect } from 'react-redux';
 import { noteData } from './../containers/Data/firebaseConnect';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 var product_List = [];
 var infoUser = [];
 class Nav extends Component {
@@ -36,22 +35,22 @@ class Nav extends Component {
                             <div><i className="fas mobie-nav-icon fa-times" onClick={() => this.stickyClick()}></i></div>
                             <ul>
                                 <li>
-                                    <NavLink to="/Home">Home</NavLink>
+                                    <NavLink onClick={() => this.stickyClick()} to="/Home">Home</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/Laptop">Laptop</NavLink>
+                                    <NavLink onClick={() => this.stickyClick()} to="/Laptop">Laptop</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/SmartPhone">SmartPhone</NavLink>
+                                    <NavLink onClick={() => this.stickyClick()} to="/SmartPhone">SmartPhone</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/Watch">Watch</NavLink>
+                                    <NavLink onClick={() => this.stickyClick()} to="/Watch">Watch</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/Blogs">Blogs</NavLink>
+                                    <NavLink onClick={() => this.stickyClick()} to="/Blogs">Blogs</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/Contact">Contact</NavLink>
+                                    <NavLink onClick={() => this.stickyClick()} to="/Contact">Contact</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <p onClick={(giatri) => { this.editstatusLogin("sign_in") }}>Sign in</p>
@@ -81,14 +80,14 @@ class Nav extends Component {
                         <div className="menu_requies">
                             <div><i className="fas mobie-nav-icon fa-times" onClick={() => this.stickyClick()}></i></div>
                             <div className="thongtin">
-                                <img src="https://pm1.narvii.com/6729/8e14db5ae41d4d424f5f4212dbeebd37268ae10fv2_00.jpg" alt="" />
+                                <img src={this.props.datauser.image} alt="" />
                                 <div className="name_info">
                                     <h4>{this.props.datauser.name}</h4>
                                     <h6>{this.props.datauser.email}</h6>
                                 </div>
                             </div>
                             <ul>
-                                <li><Link onClick={() => this.stickyClick()} to="/Home">Thông tin cá nhân</Link></li>
+                                <li><Link onClick={() => this.stickyClick()} to="/InfoUserDetail">Thông tin cá nhân</Link></li>
                                 <li>
                                     <NavLink onClick={() => this.stickyClick()} to="/Home">Home</NavLink>
                                 </li>
@@ -128,6 +127,7 @@ class Nav extends Component {
         this.setState({
             sticky: !this.state.sticky
         })
+        window.scrollTo(0, 0);
     }
     /* phan chuyen link */
     componentDidMount() {
@@ -210,6 +210,7 @@ class Nav extends Component {
                 <div>
                     <div className="bg_info" />
                     <div className="info_user">
+
                         <img src="https://pm1.narvii.com/6729/8e14db5ae41d4d424f5f4212dbeebd37268ae10fv2_00.jpg" alt="" />
                         <h4>{this.props.datauser.name}</h4>
                         <h6>{this.props.datauser.email}</h6>
@@ -251,13 +252,6 @@ class Nav extends Component {
         if (this.props.sttLoginUser) {
             return (
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="/" id="dropdownId" data-toggle="dropdown" aria-expanded="false">Language</a>
-                        <div className="dropdown-menu" aria-labelledby="dropdownId">
-                            <a className="dropdown-item" href="/">English</a>
-                            <a className="dropdown-item" href="/">Vietnamese</a>
-                        </div>
-                    </li>
                     <li className="nav-item">
                         <Link to="/InfoUserDetail">
                             <p className="icon-shopping">{this.numberProduct()}</p>
@@ -274,13 +268,6 @@ class Nav extends Component {
         else {
             return (
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="/" id="dropdownId" data-toggle="dropdown" aria-expanded="false">Language</a>
-                        <div className="dropdown-menu" aria-labelledby="dropdownId">
-                            <a className="dropdown-item" href="/">English</a>
-                            <a className="dropdown-item" href="/">Vietnamese</a>
-                        </div>
-                    </li>
                     <li className="nav-item">
                         <p onClick={(giatri) => { this.editstatusLogin("sign_in") }}>Sign in</p>
                     </li>
@@ -304,7 +291,9 @@ class Nav extends Component {
             <div>
                 <nav className="navbar navbar-expand-lg navbar-dark">
                     {/* gồm có : logo - search - language - login */}
+
                     <NavLink to="/Home"><img src={logo} alt="logo" className="logo" /></NavLink>
+
                     <div className="search">
                         <form className="form-inline my-2 my-lg-0" ref={form => this.form = form}>
                             <input className="form-control mr-sm-2"
@@ -322,7 +311,10 @@ class Nav extends Component {
                         <p className="icon-shopping-bottom" onClick={() => this.resetLink()}><i className="fas fa-chevron-up"></i></p>
                     </div>
                 </nav>
-
+                <MessengerCustomerChat
+                    pageId="104811694864766"
+                    appId="841945253250334"
+                />
                 <div className={className}>
                     {/* gồm có 6 li : Trang chủ - Laptop - SmartPhone - Watch - blog - contact  */}
                     <ul>

@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 
 import {dataLaptop} from 'containers/Data/dulieuLaptop.js';
+import Register from 'components/Register';
 
 class Laptop extends Component {
     state = {
@@ -210,13 +211,7 @@ class Laptop extends Component {
                         </div>
                         {this.renderProduct()}
                     </div>
-                    <div className="register">
-                        <h3>ĐĂNG KÝ NHẬN THÔNG TIN</h3>
-                        <form className="form-inline my-2 my-lg-0 ">
-                            <input className="form-control mr-sm-2" type="text" placeholder="Đăng ký" />
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Đăng ký</button>
-                        </form>
-                    </div>
+                    <Register/>
                 </div>
             </div>
 

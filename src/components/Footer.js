@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
-
+import appggplay from "./../Image/img-googleplay.jpg";
+import appstore from "./../Image/img-appstore.jpg";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    NavLink
+} from "react-router-dom";
 class Footer extends Component {
+    resetLink = () => {
+        window.scrollTo(0, 0);
+    }
     render() {
         return (
             <div>
@@ -12,22 +23,22 @@ class Footer extends Component {
                                 <h2>Thông tin liên hệ</h2>
                                 <ul className="infomation">
                                     <li><i className="fas fa-map-marker-alt" />Số 9 Kiều Mai,Phúc Diễn,Hà Nội </li>
-                                    <li><i className="fas fa-phone" />0389697361</li>
-                                    <li><i className="fab fa-facebook-f" />facebook.com/minhdatptt/</li>
-                                    <li><i className="fab fa-google" />minhdatptt@gmail.com</li>
+                                    <li><i className="fas fa-phone" /><a href="tel:0769220162">0389697361</a></li>
+                                    <li><i className="fab fa-facebook-f" /><a href="mailto:minhdatptt@gmail.com"> facebook.com/minhdatptt/</a></li>
+                                    <li><i className="fab fa-google" /><a href="mailto:minhdatptt@gmail.com"> minhdatptt@gmail.com</a></li>
                                 </ul>
                                 <ul className="icon_contact">
                                     <li>
-                                        <a href="/"><i className="fab fa-facebook-square" /></a>
+                                        <a href="mailto:minhdatptt@gmail.com"><i className="fab fa-facebook-square" /></a>
                                     </li>
                                     <li>
-                                        <a href="/"><i className="fab fa-google-plus-square" /></a>
+                                        <a href="mailto:minhdatptt@gmail.com"><i className="fab fa-google-plus-square" /></a>
                                     </li>
                                     <li>
-                                        <a href="/"><i className="fab fa-twitter-square" /></a>
+                                        <a href="mailto:minhdatptt@gmail.com"><i className="fab fa-twitter-square" /></a>
                                     </li>
                                     <li>
-                                        <a href="/"><i className="fab fa-instagram-square" /></a>
+                                        <a href="mailto:minhdatptt@gmail.com"><i className="fab fa-instagram-square" /></a>
                                     </li>
                                 </ul>
                             </div>
@@ -35,19 +46,19 @@ class Footer extends Component {
                                 <h2>Liên kết</h2>
                                 <ul>
                                     <li>
-                                        <a href="/">Laptop</a>
+                                        <NavLink onClick={() => this.resetLink()} to="/Laptop">Laptop</NavLink>
                                     </li>
                                     <li>
-                                        <a href="/">SmartPhone</a>
+                                        <NavLink onClick={() => this.resetLink()} to="/SmartPhone">SmartPhone</NavLink>
                                     </li>
                                     <li>
-                                        <a href="/">Watch</a>
+                                        <NavLink onClick={() => this.resetLink()} to="/Watch">Watch</NavLink>
                                     </li>
                                     <li>
-                                        <a href="/">Blog</a>
+                                        <NavLink onClick={() => this.resetLink()} to="/Blog">Blog</NavLink>
                                     </li>
                                     <li>
-                                        <a href="/">Contact</a>
+                                        <NavLink onClick={() => this.resetLink()} to="/Laptop">Contact</NavLink>
                                     </li>
                                 </ul>
                             </div>
@@ -74,8 +85,8 @@ class Footer extends Component {
                             <div className="col-3">
                                 <h2>TẢI ỨNG DỤNG TRÊN</h2>
                                 <p>Ứng dụng Mona Watch hiện có sẵn trên Google Play &amp; App Store. Tải nó ngay.</p>
-                                <a href="/"><img src="./Image/img-googleplay.jpg" alt="" /></a>
-                                <a href="/"><img src="./Image/img-appstore.jpg" alt="" /></a>
+                                <img src={appggplay} alt="" />
+                                <img src={appstore} alt="" />
                             </div>
                         </div>
                     </div>
